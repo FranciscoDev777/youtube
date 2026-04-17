@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: white;
+}
+
+/* Header - TRAVADO NO TOPO */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  height: 56px;
+  position: fixed; /* Fixa o topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0f0f0f;
+  z-index: 2000; /* Aumentado para garantir que fique sobre tudo */
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 20px;
+}
+
+.logo span {
+  font-size: 10px;
+  color: #aaa;
+  margin-left: 4px;
+  margin-bottom: 8px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #121212;
+  border: 1px solid #333;
+  border-radius: 40px;
+  padding-left: 15px;
+  width: 550px;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 100%;
+  height: 40px;
+  outline: none;
+}
+
+.search-btn {
+  background: #222;
+  border: none;
+  border-left: 1px solid #333;
+  color: white;
+  width: 64px;
+  height: 40px;
+  border-radius: 0 40px 40px 0;
+  cursor: pointer;
+}
+
+.mic-btn {
+  background: #181818;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* O Avatar "G" */
+.user-auth {
+    width: 32px;
+    height: 32px;
+    background-image: url('img/foto.png'); /* Caminho da sua foto */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: transparent; /* Esconde a letra G se ela ainda estiver no HTML */
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Layout Estrutural */
+.container {
+  display: flex;
+  margin-top: 56px; /* Empurra o conteúdo para baixo do header fixo */
+}
+
+.sidebar {
+  width: 240px;
+  padding: 12px;
+  position: fixed; /* Mudado para fixed para acompanhar o scroll se necessário */
+  top: 56px;
+  left: 0;
+  height: calc(100vh - 56px);
+  overflow-y: auto; /* Permite rolar a sidebar se tiver muitos itens */
+  background-color: #0f0f0f;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 240px; /* Dá espaço para a sidebar fixa */
+  padding: 12px 24px;
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  background-color: #0f0f0f;
+  position: sticky; /* Os filtros grudam no topo quando você rola */
+  top: 56px;
+  z-index: 1000;
+  padding: 12px 0;
+}
+
+.chip {
+  background: #272727;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.chip.active {
+  background: white;
+  color: black;
+}
+
+/* Grid de Vídeos */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.video-card {
+  cursor: pointer;
+}
+
+.thumbnail {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  background: #333;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.video-card:hover .thumbnail {
+  border-radius: 0;
+  transition: 0.2s;
+}
+
+.details {
+  display: flex;
+  gap: 12px;
+}
+
+.chan-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.text-data h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  line-height: 1.4;
+  color: #f1f1f1;
+}
+
+.text-data p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  background: #272727;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #333;
+  margin: 12px 0;
+}
